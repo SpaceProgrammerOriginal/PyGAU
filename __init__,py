@@ -1,1 +1,2 @@
-from . import benchmark.py
+from . import benchmark
+from . import debug
