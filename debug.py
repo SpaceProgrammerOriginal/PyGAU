@@ -6,6 +6,10 @@ class Report:
 
     def report(func):
 
+        """
+        Decorator for reporting when a function starts executing and ends.
+        """
+
         def modified_behaviour(*args, **kwargs):
 
             print("Started execution of", func.__name__)
