@@ -5,25 +5,6 @@ class Report:
     """
     Report/trace/print each function as you call. As simply as adding a decorator to them.
     """
-
-    @_deprecated("Use 'report_function' decorator instead. This decorator will get deleted in version 1.2")
-    def report(func):
-
-        """
-        Decorator for reporting when a function starts executing and ends.
-        """
-
-        def modified_behaviour(*args, **kwargs):
-
-            print("Started execution of", func.__name__)
-
-            bullshit = func(*args, **kwargs)
-
-            print("Ended execution of", func.__name__)
-
-            return bullshit #fixed little bug
-
-        return modified_behaviour
     
     def report_function(report_end: bool = True, enable: bool = True, report_parameters: bool = True):
 
