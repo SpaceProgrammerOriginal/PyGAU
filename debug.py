@@ -25,13 +25,15 @@ class Report:
 
         return modified_behaviour
     
-    def report_function(report_end: bool = True, enable: bool = True):
+    def report_function(report_end: bool = True, enable: bool = True, report_parameters: bool = True):
 
         """
         Decorator for reporting when a function starts executing and ends.
 
-        As parameters, it takes "report_end" that indicates whatever it should also report when the function stops execution.
-        It also takes "debug" that indicates if the report is done or not.
+        The parameters and their meaning are:
+            - report_end: bool = whatever it should also report when the function stops execution (apart from when it starts), by default true.
+            - enable: bool = indicates if the report is done or not in general, by default true.
+            - report_parameters: bool = whatever the parameters of the function debugged are also reported.
         """
 
         def decorator(func):
@@ -40,7 +42,10 @@ class Report:
 
                 def modified_behaviour(*args, **kwargs):
 
-                    print("Started execution of", func.__name__)
+                    print(f"Started execution of {func.__name__}")
+                    if report_parameters:
+                        print(f"    - Parameters: {args}")
+                        print(f"    - Keyword parameters: {kwargs}")
 
                     bullshit = func(*args, **kwargs)
 
