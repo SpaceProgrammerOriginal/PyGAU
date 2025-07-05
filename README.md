@@ -8,7 +8,7 @@ As it names suggests, it is a library that adds debug features that are as easy 
 
 ## Features
 
-Currently, in version 1.1, it contains the following
+Currently, in version 1.2, it contains the following
 
 - Benchmarking:
   - "Timing" class -> measure how many time does take a function to execute and timing code sections, as simple as adding a decorator to the functions of interest.
