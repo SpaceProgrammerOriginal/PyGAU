@@ -55,8 +55,8 @@ class Report:
 
                     print("│ "*(indentation_level-1  + extra_indentation) + f"├ \033[32mStarted execution of\033[0m \033[33m{func.__name__}\033[0m")
                     if report_parameters:
-                        print("│ "*indentation_level + f"├ Parameters: {args}")
-                        print("│ "*indentation_level + f"├ Keyword parameters: {kwargs}")
+                        print("│ "* (indentation_level + extra_indentation) + f"├ Parameters: {args}")
+                        print("│ "* (indentation_level + extra_indentation) + f"├ Keyword parameters: {kwargs}")
 
                     bullshit = func(*args, **kwargs)
 
