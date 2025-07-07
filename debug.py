@@ -1,4 +1,3 @@
-from warnings import deprecated as _deprecated
 import inspect as _inspect
 
 class Report:
